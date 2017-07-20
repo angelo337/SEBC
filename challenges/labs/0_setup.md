@@ -2,6 +2,10 @@ cloud provider : AWS
 
 IP address                 DNS name   
 34.209.1.17                ec2-34-209-1-17.us-west-2.compute.amazonaws.com
+34.213.55.114              ec2-34-213-55-114.us-west-2.compute.amazonaws.com
+35.167.120.94              ec2-35-167-120-94.us-west-2.compute.amazonaws.com
+52.39.101.0                ec2-52-39-101-0.us-west-2.compute.amazonaws.com
+52.39.29.246               ec2-52-39-29-246.us-west-2.compute.amazonaws.com
 
 
 cat /etc/redhat-release
