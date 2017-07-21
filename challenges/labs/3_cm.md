@@ -7,6 +7,27 @@ drwxrwxr-x   - hue    hue             0 2017-07-20 19:19 /user/hue
 drwxrwxr-x   - oozie  oozie           0 2017-07-20 19:19 /user/oozie
 drwxr-x--x   - spark  spark           0 2017-07-20 19:18 /user/spark
 
+Create user directories in HDFS
+
+sudo su
+su hdfs
+
+hdfs dfs -mkdir /user/saturn
+hdfs dfs -mkdir /user/haley
+
+hdfs dfs -ls /user
+Found 9 items
+drwxr-xr-x   - admin  admin               0 2017-07-20 19:51 /user/admin
+drwxr-xr-x   - hdfs   supergroup          0 2017-07-20 20:14 /user/haley
+drwxr-xr-x   - hdfs   supergroup          0 2017-07-20 19:43 /user/hdfs
+drwxrwxrwx   - mapred hadoop              0 2017-07-20 19:17 /user/history
+drwxrwxr-t   - hive   hive                0 2017-07-20 19:18 /user/hive
+drwxrwxr-x   - hue    hue                 0 2017-07-20 19:19 /user/hue
+drwxrwxr-x   - oozie  oozie               0 2017-07-20 19:19 /user/oozie
+drwxr-xr-x   - hdfs   supergroup          0 2017-07-20 20:14 /user/saturn
+drwxr-x--x   - spark  spark               0 2017-07-20 19:18 /user/spark
+
+
 output from the CM API call 
 http://54.69.115.200:7180/api/v14/hosts
 {
