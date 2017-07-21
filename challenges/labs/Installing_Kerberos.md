@@ -69,11 +69,12 @@ default_realm = ANGELO337.HQ
 [realms]
  ANGELO337.HQ = {
   kdc_ports = 88
+  kdc_tcp_ports = 88
    admin_keytab = /etc/kadm5.keytab
   database_name = /var/kerberos/krb5kdc/principal
   acl_file = /var/kerberos/krb5kdc/kadm5.acl
   key_stash_file = /var/kerberos/krb5kdc/stash
-  max_life = 10h 0m 0s
+  max_life = 1d
   max_renewable_life = 7d 0h 0m 0s
   master_key_type = des3-hmac-sha1
   #master_key_type = aes256-cts
@@ -121,6 +122,8 @@ kadmin.local:  addprinc haley
 kadmin.local:  addprinc cloudera-scm
 kadmin.local:  ktadd -k /var/kerberos/krb5kdc/kadm5.keytab kadmin/admin
 kadmin.local:  ktadd -k /var/kerberos/krb5kdc/kadm5.keytab kadmin/changepw
+# https://www.cloudera.com/documentation/enterprise/5-7-x/topics/cm_sg_s3_cm_principal.html#xd_583c10bfdbd326ba--6eed2fb8-14349d04bee--772d
+kadmin.local:   addprinc -pw *******! cloudera-scm/admin@ANGELO337.HQ
 
 
 
@@ -132,3 +135,7 @@ $ sudo kadmin.local
 kadmin.local:  addprinc -randkey host/angelo337.hq
 kadmin.local:  ktadd host/angelo337.hq
 $ sudo yum -y install krb5-workstation
+
+IN ALL HOST INSTALL
+sudo yum -y install krb5-workstation krb5-libs
+sudo yum -y install openldap-clients
